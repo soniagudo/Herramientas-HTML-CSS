@@ -1,0 +1,1 @@
+{"mappings":"AAEA","sources":["src/styles/main.scss"],"sourcesContent":["$primary-color: hotpink;\r\n\r\nh1 {\r\n    color: $primary-color;\r\n    font-family: cursive;\r\n  }"],"names":[],"version":3,"file":"proyecto-parcel-htmlycss.9f367d21.css.map","sourceRoot":"/__parcel_source_root/"}
