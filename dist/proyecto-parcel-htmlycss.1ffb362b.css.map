@@ -1,1 +1,0 @@
-{"mappings":"ACAA","sources":["proyecto-parcel-htmlycss.1ffb362b.css","src/styles.css"],"sourcesContent":["h1 {\n  color: #ff69b4;\n  font-family: cursive;\n}\n/*# sourceMappingURL=proyecto-parcel-htmlycss.1ffb362b.css.map */\n","h1 {\r\n    color: hotpink;\r\n    font-family: cursive;\r\n  }"],"names":[],"version":3,"file":"proyecto-parcel-htmlycss.1ffb362b.css.map"}
