@@ -1,1 +1,0 @@
-{"mappings":"ACEA,QAAQ,GAAG,CAAC","sources":["<anon>","src/app.js"],"sourcesContent":["\nconsole.log('Hello world!');\n\n\n//# sourceMappingURL=proyecto-parcel-htmlycss.c7a8e462.js.map\n","import './main.scss';\r\n\r\nconsole.log('Hello world!');"],"names":["console","log"],"version":3,"file":"proyecto-parcel-htmlycss.c7a8e462.js.map"}

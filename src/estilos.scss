@@ -1,0 +1,617 @@
+/* Casa della nonna estilos - SCSS compatible con Parcel */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Variables */
+$main-color: rgb(0, 0, 0);
+$accent-color: rgb(0, 17, 142);
+$bg-color: #f1efe7;
+$light-color: rgb(255, 255, 255);
+$accent-light-color: rgba(0, 17, 142, 0.1);
+
+/* Reset */
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Comportamiento suavizado para desplazamientos */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reglas para sticky footer */
+html,
+body {
+  height: 100%;
+  font-weight: 400;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+/* Reglas generales */
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: $main-color;
+  background-color: $bg-color;
+}
+
+h1,
+h2 {
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+ul {
+  font-size: 1rem;
+  
+  li {
+    margin-bottom: 1rem;
+  }
+}
+
+a {
+  color: $main-color;
+  text-decoration: none;
+  border-bottom: 1px dotted;
+  padding-bottom: 2px;
+}
+
+@media (min-width: 992px) {
+  h1 {
+    font-size: 4.2rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1.3rem;
+  }
+
+  ul {
+    font-size: 1.3rem;
+  }
+}
+
+/* Header y menú de navegación */
+header.header {
+  padding-top: 0.25rem;
+  padding-bottom: 2rem;
+  
+  .top {
+    text-align: center;
+    
+    a {
+      font-weight: 700;
+      color: $main-color;
+      border-bottom: none;
+      
+      &:hover {
+        color: $accent-color;
+      }
+    }
+  }
+}
+
+nav.nav {
+  ul {
+    list-style-type: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 1rem;
+    margin-left: 0;
+    
+    li {
+      margin-top: .5rem;
+      margin-bottom: .5rem;
+      
+      a {
+        font-weight: 600;
+        color: $accent-color;
+        text-decoration: none;
+        padding: 10px 20px;
+        transition: background-color 0.3s, color 0.3s;
+        position: relative;
+        
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -2px;
+          width: 100%;
+          height: 2px;
+          background-color: $accent-color;
+          transform: scaleX(0);
+          transform-origin: bottom right;
+          transition: transform 0.3s ease-out;
+        }
+        
+        &:hover {
+          color: $accent-color;
+          background-color: $accent-light-color; 
+          
+          &::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(min-width: 992px) {
+  div.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+  
+  nav.nav {
+    ul {
+      display: flex;
+      justify-content: center;
+      margin-top: 0;
+      color: $main-color;
+      
+      li {
+        a {
+          color: $main-color;
+        }
+        
+        &::after {
+          margin-left: 1rem;
+          margin-right: 1rem;
+          content: " | ";
+        }
+        
+        &:last-child::after {
+          margin-left: 0;
+          margin-right: 0;
+          content: "";
+        }
+      }
+    }
+  }
+}
+
+/* Footer */
+footer {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: $main-color;
+  color: $light-color;
+  text-align: center;
+  
+  div:first-child {
+    margin-bottom: 1rem;
+    
+    p {
+      padding-top: 1rem;
+      font-size: .9rem;
+      margin: 0;
+    }
+  }
+  
+  ul {
+    margin-left: 0;
+    list-style-type: none;
+    
+    li {
+      margin-bottom: 0;
+      padding-bottom: .5rem;
+      font-size: .9rem;
+    }
+    
+    &.social {
+      li {
+        display: inline-block;
+      }
+    }
+  }
+  
+  a {
+    color: $light-color;
+    border-bottom: none;
+    
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+@media(min-width: 992px) {
+  .flex-footer {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    align-items: center;
+  }
+  
+  footer {
+    .footer-right {
+      text-align: right;
+    }
+    
+    ul.social {
+      margin-bottom: 0.5rem;
+    }
+    
+    ul.legal {
+      li {
+        display: inline-block;
+        padding-bottom: 0;
+        
+        &::after {
+          content: " | ";
+          padding-right: .5rem;
+          padding-left: .5rem;
+        }
+        
+        &:last-child::after {
+          content: "";
+          padding-right: 0;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+
+/* Main */
+main {
+  margin: 0 0 5rem;
+}
+
+section {
+  margin-top: 5rem;
+}
+
+/* Contenidos acotados */
+.container-fluid {
+  width: 100%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  
+  @media (min-width: 992px) {
+    padding-right: 4rem;
+    padding-left: 4rem;
+  }
+}
+
+.container {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1.5rem;
+  
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Página de inicio */
+.hero-image {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  background-color: $main-color;
+  background-image: url(./img/hero-image-home.jpg);
+  background-size: cover;
+  background-position: center;
+  color: $main-color;
+  text-align: center;
+  
+  h1 {
+    color: $main-color;
+    font-size: 3rem;
+    margin-top: 0;
+  }
+  
+  p.lead {
+    font-size: 2rem;
+    line-height: 1.1em;
+  }
+}
+
+main.home {
+  section {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-image {
+    h1 {
+      font-size: 4rem;
+    }
+    
+    p.lead {
+      font-size: 3rem;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .hero-image {
+    h1 {
+      font-size: 5rem;
+    }
+    
+    p.lead {
+      font-size: 3rem;
+    }
+  }
+  
+  div.intro-home {
+    justify-content: space-between;
+    gap: 6rem;
+  }
+}
+
+/* Estilos para el formulario de reserva */
+form {
+  margin: 2rem 0;
+  
+  fieldset {
+    border: none;
+    margin-bottom: 1.5rem;
+    
+    legend {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+  }
+  
+  ul {
+    list-style-type: none;
+    
+    li {
+      margin-bottom: 1rem;
+      
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="number"],
+      input[type="date"],
+      input[type="time"],
+      textarea {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1rem;
+        border: 1px solid $accent-color;
+        border-radius: 4px;
+      }
+      
+      textarea {
+        height: 100px;
+      }
+      
+      input[type="checkbox"] {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+  
+  button[type="submit"] {
+    background-color: $accent-color;
+    color: $light-color;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    
+    &:hover {
+      background-color: $accent-color;
+    }
+  }
+  .outFieldset {
+  p,
+  ul {
+    font-size: 1rem;
+    }
+  }
+}
+
+/* Estilos para la carta */
+.menu-section {
+  width: 100%;
+  
+  .container-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .menu-item {
+    background-color: $light-color;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba($main-color, 0.1);
+    transition: transform 0.3s ease;
+    height: 100%;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .image-wrapper {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      
+      .menu-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease;
+        
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    .menu-content {
+      padding: 1.5rem;
+      
+      h2 {
+        font-size: 1.4rem;
+        margin-bottom: 0.8rem;
+        color: $accent-color;
+      }
+      
+      p {
+        font-size: 0.95rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.5;
+      }
+      
+      .price {
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: $main-color;
+        display: block;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}
+
+/* Paginación */
+.pagination-container {
+  margin: 3rem 0;
+  text-align: center;
+  
+  .pagination {
+    display: inline-flex;
+    list-style: none;
+    padding: 0;
+    gap: 0.5rem;
+    
+    li {
+      a {
+        display: block;
+        padding: 0.5rem 1rem;
+        background: $accent-color;
+        color: $light-color;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        
+        &:hover, &.active {
+          background: $accent-color;
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+}
+
+/* Sección contacto */
+.contact-section {
+  padding: 4rem 0;
+  position: relative;
+  background-color: $accent-light-color; 
+  
+  .container {
+    gap: 2rem;
+    
+    @media (min-width: 992px) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  
+  h2 {
+    color: $accent-color;
+    position: relative;
+    padding-bottom: 1rem;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: $accent-color;
+    }
+  }
+  
+  address {
+    font-style: normal;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    
+    strong {
+      display: inline-block;
+      min-width: 100px;
+      color: $accent-color;
+    }
+    
+    a {
+      color: $accent-color;
+      text-decoration: none;
+      border-bottom: 1px dashed $accent-color;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        color: $accent-color;
+      }
+    }
+  }
+}
