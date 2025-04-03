@@ -47,8 +47,3 @@ function checkFormCompletion() {
 document.getElementById("reservationDate").addEventListener("change", checkFormCompletion);
 document.getElementById("reservationTime").addEventListener("input", validateTime);
 document.getElementById("reservationTime").addEventListener("change", checkFormCompletion);
-
-document.addEventListener("DOMContentLoaded", () => {
-    disablePastDates();
-    checkFormCompletion();
-});

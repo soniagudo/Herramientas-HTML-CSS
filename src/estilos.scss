@@ -1,4 +1,4 @@
-/* Casa della nonna estilos - SCSS compatible con Parcel */
+/* Casa della nonna estilos */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 /* Variables */
@@ -17,12 +17,6 @@ $accent-light-color: rgba(0, 17, 142, 0.1);
   box-sizing: border-box;
 }
 
-/* Comportamiento suavizado para desplazamientos */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Reglas para sticky footer */
 html,
 body {
   height: 100%;
@@ -42,7 +36,6 @@ footer {
   flex-shrink: 0;
 }
 
-/* Reglas generales */
 body {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
@@ -50,16 +43,11 @@ body {
   background-color: $bg-color;
 }
 
-h1,
-h2 {
-  font-weight: 700;
-  line-height: 1.25;
-}
-
 h1 {
   font-size: 2.5rem;
   margin-top: 2rem;
   margin-bottom: 3rem;
+  color: $accent-color;
 }
 
 h2 {
@@ -101,15 +89,15 @@ a {
     font-size: 1.3rem;
   }
 
-  ul {
-    font-size: 1.3rem;
-  }
 }
 
 /* Header y menú de navegación */
 header.header {
-  padding-top: 0.25rem;
-  padding-bottom: 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: $bg-color;
+  transition: all 0.4s ease;
   
   .top {
     text-align: center;
@@ -119,12 +107,18 @@ header.header {
       color: $main-color;
       border-bottom: none;
       
+      img {
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        width: 180px;
+      }
+
       &:hover {
         color: $accent-color;
       }
     }
   }
 }
+
 
 nav.nav {
   ul {
@@ -298,10 +292,6 @@ main {
   margin: 0 0 5rem;
 }
 
-section {
-  margin-top: 5rem;
-}
-
 /* Contenidos acotados */
 .container-fluid {
   width: 100%;
@@ -421,7 +411,6 @@ form {
         padding: 0.75rem;
         font-size: 1rem;
         border: 1px solid $accent-color;
-        border-radius: 4px;
       }
       
       textarea {
@@ -439,7 +428,6 @@ form {
     color: $light-color;
     padding: 1rem 2rem;
     border: none;
-    border-radius: 4px;
     font-size: 1rem;
     cursor: pointer;
     
@@ -475,57 +463,50 @@ form {
   }
 
   .menu-item {
-    background-color: $light-color;
-    border-radius: 10px;
-    overflow: hidden;
+    background: $light-color;
     box-shadow: 0 4px 8px rgba($main-color, 0.1);
-    transition: transform 0.3s ease;
+    transition: transform .3s ease;
     height: 100%;
-
-    &:hover {
-      transform: translateY(-5px);
-    }
-
+    overflow: hidden;
+    
+    &:hover { transform: translateY(-5px); }
+    
     .image-wrapper {
       position: relative;
-      width: 100%;
-      height: 200px;
       overflow: hidden;
+      height: px; 
       
       .menu-image {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        display: block;
-        transition: transform 0.5s ease;
+        transition: transform .5s ease;
         
-        &:hover {
-          transform: scale(1.05);
-        }
+        &:hover { transform: scale(1.05); }
       }
     }
-
+    
     .menu-content {
-      padding: 1.5rem;
+      padding: 1rem;
       
-      h2 {
-        font-size: 1.4rem;
-        margin-bottom: 0.8rem;
-        color: $accent-color;
+      h2 { 
+        font-size: 1.4rem; 
+        margin-bottom: .8rem; 
+        color: $accent-color; 
       }
       
-      p {
-        font-size: 0.95rem;
-        margin-bottom: 1.2rem;
-        line-height: 1.5;
+      p { 
+        font-size: .95rem; 
+        margin-bottom: 1.2rem; 
+        line-height: 1.5; 
       }
       
-      .price {
-        font-weight: bold;
-        font-size: 1.2rem;
-        color: $main-color;
-        display: block;
-        margin-top: 0.5rem;
+      .price { 
+        font-weight: bold; 
+        font-size: 1.2rem; 
+        color: $main-color; 
+        margin-top: .5rem; 
+        display: block; 
       }
     }
   }
@@ -549,7 +530,6 @@ form {
         background: $accent-color;
         color: $light-color;
         text-decoration: none;
-        border-radius: 4px;
         transition: all 0.3s ease;
         
         &:hover, &.active {
@@ -576,22 +556,6 @@ form {
     }
   }
   
-  h2 {
-    color: $accent-color;
-    position: relative;
-    padding-bottom: 1rem;
-    
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background-color: $accent-color;
-    }
-  }
-  
   address {
     font-style: normal;
     font-size: 1.1rem;
@@ -610,6 +574,208 @@ form {
       transition: all 0.3s ease;
       
       &:hover {
+        color: $accent-color;
+      }
+    }
+  }
+}
+
+/* Páginas detalle */
+
+.detail-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem 4rem;
+
+  @media (min-width: 992px) {
+    padding: 0 4rem 6rem;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+    padding-bottom: 1.5rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: $accent-color;
+    }
+  }
+
+  .featured-image {
+    margin: 0 auto 3rem;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba($main-color, 0.1);
+    border: 1px solid $accent-light-color;
+    max-width: 800px; 
+
+    img {
+      width: 100%;
+      height: auto;
+      max-height: 500px; 
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+
+  .content {
+    p {
+      margin-bottom: 1.8rem;
+      font-size: 1.1rem;
+      line-height: 1.7;
+
+      @media (min-width: 992px) {
+        font-size: 1.2rem;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 4rem 0;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba($main-color, 0.08);
+      border: 1px solid $accent-light-color;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba($accent-color, 0.12);
+      }
+    }
+  }
+
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%; // 16:9
+    height: 0;
+    overflow: hidden;
+    margin: 5rem 0;
+    box-shadow: 0 10px 30px rgba($main-color, 0.15);
+    background: $main-color;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+}
+
+/* Fuentes y créditos */
+
+.sources {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+  background-color: $light-color;
+  box-shadow: 0 4px 12px rgba($main-color, 0.08);
+  padding: 2rem;
+
+  @media (min-width: 992px) {
+    padding: 3rem;
+    margin: 6rem auto;
+  }
+
+  h2 {
+    color: $accent-color;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 2px;
+      background: $accent-color;
+    }
+  }
+
+  h3 {
+    color: $accent-color;
+    font-size: 1.5rem;
+    margin: 2rem 0 1.5rem;
+    font-weight: 600;
+  }
+
+  ul {
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+
+    li {
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: $main-color;
+
+      @media (min-width: 992px) {
+        font-size: 1.15rem;
+      }
+
+      a {
+        color: $accent-color;
+        text-decoration: none;
+        border-bottom: 1px dashed $accent-color;
+        padding-bottom: 2px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: $accent-color;
+          border-bottom-style: solid;
+        }
+      }
+    }
+  }
+
+  .ai-disclosure {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background-color: $accent-light-color;
+    border-left: 4px solid $accent-color;
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 0;
+      color: $main-color;
+
+      strong {
         color: $accent-color;
       }
     }
