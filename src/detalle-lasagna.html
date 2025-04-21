@@ -47,11 +47,6 @@
     <main id="main">
       <article class="detail-page">
         <h1>Lasagna alla Bolognese</h1>
-        
-        <div class="featured-image">
-            <img src="img/lasagna.jpg" alt="Lasagna">
-        </div>
-
         <div class="featured-image">
           <picture>
               <source type="image/avif" srcset="img/lasagna.avif">
@@ -69,9 +64,104 @@
             
             <div class="gallery">
                 <h2>Fotos de nuestros clientes</h2>
-                <img src="img/lasagna-casera.jpg" alt="Lasagna casera">
-                <img src="img/cherrys.jpg" alt="Tomates cherrys del huerto">
-                <img src="img/lasagna-ingredientes.jpg" alt="Ingredientes para una lasagna">
+                <picture>
+                  <source media="(min-width: 1200px)" 
+                          srcset="img/lasagna-casera-wide.webp 1x, 
+                                  img/lasagna-casera-wide@2x.webp 2x" 
+                          type="image/webp">
+                  <source media="(min-width: 1200px)" 
+                          srcset="img/lasagna-casera-wide.jpg 1x, 
+                                  img/lasagna-casera-wide@2x.jpg 2x" 
+                          type="image/jpeg">
+                  <source media="(min-width: 768px)" 
+                          srcset="img/lasagna-casera-desktop.webp 1x, 
+                                  img/lasagna-casera-desktop@2x.webp 2x" 
+                          type="image/webp">
+                  <source media="(min-width: 768px)" 
+                          srcset="img/lasagna-casera-desktop.jpg 1x, 
+                                  img/lasagna-casera-desktop@2x.jpg 2x" 
+                          type="image/jpeg">
+                  <source media="(max-width: 767px)" 
+                          srcset="img/lasagna-casera-mobile.webp 1x, 
+                                  img/lasagna-casera-mobile@2x.webp 2x" 
+                          type="image/webp">
+                  <source media="(max-width: 767px)" 
+                          srcset="img/lasagna-casera-mobile.jpg 1x, 
+                                  img/lasagna-casera-mobile@2x.jpg 2x" 
+                          type="image/jpeg">
+                  <img src="img/lasagna-casera-desktop.jpg" 
+                       srcset="img/lasagna-casera-desktop.jpg 1x, 
+                               img/lasagna-casera-desktop@2x.jpg 2x" 
+                       alt="Deliciosa lasaña casera recién horneada" 
+                       loading="lazy" 
+                       decoding="async">
+              </picture>
+
+              <picture>
+                <source media="(min-width: 1200px)" 
+                        srcset="img/cherrys-wide.webp 1x, 
+                                img/cherrys-wide@2x.webp 2x" 
+                        type="image/webp">
+                <source media="(min-width: 1200px)" 
+                        srcset="img/cherrys-wide.jpg 1x, 
+                                img/cherrys-wide@2x.jpg 2x" 
+                        type="image/jpeg">
+                <source media="(min-width: 768px)" 
+                        srcset="img/cherrys-desktop.webp 1x, 
+                                img/cherrys-desktop@2x.webp 2x" 
+                        type="image/webp">
+                <source media="(min-width: 768px)" 
+                        srcset="img/cherrys-desktop.jpg 1x, 
+                                img/cherrys-desktop@2x.jpg 2x" 
+                        type="image/jpeg">
+                <source media="(max-width: 767px)" 
+                        srcset="img/cherrys-mobile.webp 1x, 
+                                img/cherrys-mobile@2x.webp 2x" 
+                        type="image/webp">
+                <source media="(max-width: 767px)" 
+                        srcset="img/cherrys-mobile.jpg 1x, 
+                                img/cherrys-mobile@2x.jpg 2x" 
+                        type="image/jpeg">
+                <img src="img/cherrys-desktop.jpg" 
+                     srcset="img/cherrys-desktop.jpg 1x, 
+                             img/cherrys-desktop@2x.jpg 2x" 
+                     alt="Deliciosa lasaña casera recién horneada" 
+                     loading="lazy" 
+                     decoding="async">
+            </picture>
+              
+            <picture>
+              <source media="(min-width: 1200px)" 
+                      srcset="img/lasagna-ingredientes-wide.webp 1x, 
+                              img/lasagna-ingredientes-wide@2x.webp 2x" 
+                      type="image/webp">
+              <source media="(min-width: 1200px)" 
+                      srcset="img/lasagna-ingredientes-wide.jpg 1x, 
+                              img/lasagna-ingredientes-wide@2x.jpg 2x" 
+                      type="image/jpeg">
+              <source media="(min-width: 768px)" 
+                      srcset="img/lasagna-ingredientes-desktop.webp 1x, 
+                              img/lasagna-ingredientes-desktop@2x.webp 2x" 
+                      type="image/webp">
+              <source media="(min-width: 768px)" 
+                      srcset="img/lasagna-ingredientes-desktop.jpg 1x, 
+                              img/lasagna-ingredientes-desktop@2x.jpg 2x" 
+                      type="image/jpeg">
+              <source media="(max-width: 767px)" 
+                      srcset="img/lasagna-ingredientes-mobile.webp 1x, 
+                              img/lasagna-ingredientes-mobile@2x.webp 2x" 
+                      type="image/webp">
+              <source media="(max-width: 767px)" 
+                      srcset="img/lasagna-ingredientes-mobile.jpg 1x, 
+                              img/lasagna-ingredientes-mobile@2x.jpg 2x" 
+                      type="image/jpeg">
+              <img src="img/lasagna-ingredientes-desktop.jpg" 
+                   srcset="img/lasagna-ingredientes-desktop.jpg 1x, 
+                           img/lasagna-ingredientes-desktop@2x.jpg 2x" 
+                   alt="Deliciosa lasaña casera recién horneada" 
+                   loading="lazy" 
+                   decoding="async">
+          </picture>
             </div>
             
             <div class="video-section">
