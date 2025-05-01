@@ -516,7 +516,7 @@ main.home {
   }
 }
 
-// Entrada "saltando desde abajo"
+/* Cortapizza */
 @keyframes bounceInUp {
   0% {
     transform: translate(-50%, 100%) scale(0.8);
@@ -544,14 +544,12 @@ main.home {
   }
 }
 
-// Desaparece deslizándose hacia abajo
 @keyframes disappearDown {
   to {
     transform: translate(-50%, 100%) scale(0.8);
     opacity: 0;
   }
 }
-
 
 .oval-image {
   width: 300px;
@@ -755,35 +753,6 @@ form {
         color: $main-color; 
         margin-top: .5rem; 
         display: block; 
-      }
-    }
-  }
-}
-
-/* Paginación */
-.pagination-container {
-  margin: 3rem 0;
-  text-align: center;
-  
-  .pagination {
-    display: inline-flex;
-    list-style: none;
-    padding: 0;
-    gap: 0.5rem;
-    
-    li {
-      a {
-        display: block;
-        padding: 0.5rem 1rem;
-        background: $accent-color;
-        color: $light-color;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        
-        &:hover, &.active {
-          background: $accent-color;
-          transform: translateY(-2px);
-        }
       }
     }
   }

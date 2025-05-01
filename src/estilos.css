@@ -440,6 +440,7 @@ main.home section {
   animation: bounceInUp 1s ease-out forwards, pizzaBounce 0.6s ease-in-out 1s 6 alternate, disappearDown 0.5s ease-in-out 5s forwards;
 }
 
+/* Cortapizza */
 @keyframes bounceInUp {
   0% {
     transform: translate(-50%, 100%) scale(0.8);
@@ -651,30 +652,6 @@ form .outFieldset ul {
   color: rgb(0, 0, 0);
   margin-top: 0.5rem;
   display: block;
-}
-
-/* Paginación */
-.pagination-container {
-  margin: 3rem 0;
-  text-align: center;
-}
-.pagination-container .pagination {
-  display: inline-flex;
-  list-style: none;
-  padding: 0;
-  gap: 0.5rem;
-}
-.pagination-container .pagination li a {
-  display: block;
-  padding: 0.5rem 1rem;
-  background: rgb(0, 17, 142);
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-.pagination-container .pagination li a:hover, .pagination-container .pagination li a.active {
-  background: rgb(0, 17, 142);
-  transform: translateY(-2px);
 }
 
 /* Sección contacto */
