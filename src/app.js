@@ -51,16 +51,17 @@ document.addEventListener("DOMContentLoaded", () => {
     disablePastDates(); 
 });
 
-  function loadYouTube(el) {
-    const iframe = document.createElement('iframe');
-    iframe.src = "https://www.youtube.com/embed/Nw02F1GEQYo?autoplay=1";
-    iframe.width = "560";
-    iframe.height = "315";
-    iframe.frameBorder = "0";
-    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-    iframe.referrerPolicy = "strict-origin-when-cross-origin";
-    iframe.allowFullscreen = true;
-    iframe.loading = "lazy";
-    el.innerHTML = "";
-    el.appendChild(iframe);
-  }
+document.querySelector('.youtube-placeholder').addEventListener('click', function() {
+  const videoId = this.getAttribute('data-video-id');
+  const iframe = document.createElement('iframe');
+  iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`;
+  iframe.width = "560";
+  iframe.height = "315";
+  iframe.style.border = "0";
+  iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+  iframe.referrerPolicy = "strict-origin-when-cross-origin";
+  iframe.allowFullscreen = true;
+  iframe.loading = "lazy";
+  this.innerHTML = "";
+  this.appendChild(iframe);
+});

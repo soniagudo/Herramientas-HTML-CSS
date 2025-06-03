@@ -931,11 +931,19 @@ form {
     }
   }
 
+.video-section {
+    margin: 5rem 0;
+    text-align: center;
+
+    h2 {
+    color: $accent-color;
+    font-size: 2rem;
+    }
+
   .youtube-placeholder {
   position: relative;
   cursor: pointer;
   display: inline-block;
-  border-radius: 10px;
   overflow: hidden;
 
   img {
@@ -951,12 +959,12 @@ form {
     transform: translate(-50%, -50%);
     font-size: 3rem;
     color: $light-color;
-    background-color: $main-color;
     border-radius: 50%;
     padding: 0.5rem 1rem;
     pointer-events: none;
     transition: background-color 0.3s;
   }
+}
 }
 }
 
