@@ -931,34 +931,31 @@ form {
     }
   }
 
-.video-section {
-    margin: 5rem 0;
-    text-align: center;
+  .youtube-placeholder {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 10px;
+  overflow: hidden;
 
-    h2 {
-    color: $accent-color;
-    font-size: 2rem;
-    }
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 
-  .video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    margin: 5rem;
-    background: $main-color;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-
-    iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: $light-color;
+    background-color: $main-color;
+    border-radius: 50%;
+    padding: 0.5rem 1rem;
+    pointer-events: none;
+    transition: background-color 0.3s;
   }
 }
 }
